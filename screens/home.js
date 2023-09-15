@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import { Text,StyleSheet,View,TouchableOpacity,FlatList } from "react-native";
+import  Fichabarbeiro from '../component/fichabarbeiro'
 
 const Agendas = require ('../teste.json')
 
@@ -8,13 +9,9 @@ export default class HomeScreen extends Component{
         super(props)
         this.state = {}
     }
-    renderItem = ({item,i}) => {
+    renderItem = ({item: item}) => {
         return (
-            <TouchableOpacity  onPress = {() => this.props.navigation.navigate('Calendario',{item:item})}>
-                <Text>
-                    {item.nome} 
-                </Text>
-            </TouchableOpacity>
+           < Fichabarbeiro item={item} navigation={this.props.navigation}/>
         )
     }
     
